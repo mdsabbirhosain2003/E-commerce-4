@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luxora Edge - Premium Accessories Sandbox</title>
+    <title>Luxora Edge - 52 Unique Items Sandbox</title>
     <style>
         :root {
-            --primary: #0f172a;       /* Deep Obsidian Slate */
-            --primary-hover: #334155; /* Steel Gray */
-            --accent: #b45309;        /* Luxury Amber Gold */
-            --bg-color: #f8fafc;      /* Clean Minimal Studio Gray */
+            --primary: #0f172a;       
+            --primary-hover: #334155; 
+            --accent: #b45309;        
+            --bg-color: #f8fafc;      
             --card-bg: #ffffff;
             --text-main: #0f172a;
             --text-muted: #64748b;
@@ -19,7 +19,6 @@
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: '-apple-system', BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
         body { background-color: var(--bg-color); color: var(--text-main); padding-bottom: 60px; }
 
-        /* Navigation */
         header { background-color: var(--card-bg); box-shadow: 0 1px 3px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 100; border-bottom: 1px solid var(--border-color); }
         .nav-container { max-width: 1200px; margin: 0 auto; padding: 16px 20px; display: flex; justify-content: space-between; align-items: center; }
         .logo { font-size: 22px; font-weight: 800; color: var(--primary); cursor: pointer; letter-spacing: 1px; text-transform: uppercase; }
@@ -29,16 +28,13 @@
         .cart-link { position: relative; }
         .cart-badge { position: absolute; top: -10px; right: -15px; background-color: var(--accent); color: white; font-size: 11px; border-radius: 50%; width: 18px; height: 18px; display: flex; align-items: center; justify-content: center; font-weight: bold; }
 
-        /* Main Container */
         .container { max-width: 1200px; margin: 30px auto; padding: 0 20px; }
         
-        /* Hero Banner */
         .hero { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: #f8fafc; padding: 50px 40px; border-radius: 12px; margin-bottom: 35px; text-align: center; position: relative; overflow: hidden; }
         .hero h2 { font-size: 32px; margin-bottom: 10px; font-weight: 700; letter-spacing: -0.5px; }
         .hero p { color: #94a3b8; font-size: 16px; }
         .hero::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: linear-gradient(90deg, var(--accent), #f59e0b); }
 
-        /* Category Filter Bar */
         .filter-container { display: flex; gap: 10px; overflow-x: auto; margin-bottom: 30px; padding-bottom: 5px; }
         .filter-container::-webkit-scrollbar { height: 5px; }
         .filter-container::-webkit-scrollbar-thumb { background: var(--border-color); border-radius: 10px; }
@@ -46,7 +42,6 @@
         .filter-btn:hover { border-color: var(--primary); color: var(--primary); }
         .filter-btn.active { background-color: var(--primary); color: white; border-color: var(--primary); }
 
-        /* Product Grid */
         .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 30px; }
         .product-card { background-color: var(--card-bg); border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.02); display: flex; flex-direction: column; transition: transform 0.2s, box-shadow 0.2s; border: 1px solid var(--border-color); }
         .product-card:hover { transform: translateY(-4px); box-shadow: 0 12px 24px rgba(0,0,0,0.06); }
@@ -58,23 +53,19 @@
         .product-meta { display: flex; justify-content: space-between; align-items: center; margin-top: auto; }
         .product-price { font-size: 18px; font-weight: 700; color: var(--primary); }
         
-        /* Buttons */
         .btn { background-color: var(--primary); color: white; border: none; padding: 10px 16px; border-radius: 4px; font-weight: 600; cursor: pointer; transition: background 0.2s; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px; }
         .btn:hover { background-color: var(--primary-hover); }
         .btn-success { background-color: var(--accent); }
         .btn-success:hover { background-color: #92400e; }
 
-        /* SPA Pages visibility */
         .page { display: none; }
         .page.active { display: block; }
 
-        /* Product Details Page */
         .detail-wrapper { background-color: var(--card-bg); padding: 40px; border-radius: 12px; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; border: 1px solid var(--border-color); }
         .detail-img { width: 100%; max-height: 480px; object-fit: cover; border-radius: 6px; background-color: #f1f5f9; }
         .back-btn { display: inline-block; margin-bottom: 20px; color: var(--primary); font-weight: 600; cursor: pointer; text-decoration: none; font-size: 14px; }
         .back-btn:hover { color: var(--accent); }
 
-        /* Cart Page */
         .cart-wrapper { background-color: var(--card-bg); padding: 40px; border-radius: 12px; border: 1px solid var(--border-color); }
         .cart-item { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; border-bottom: 1px solid var(--border-color); }
         .cart-item:last-child { border-bottom: none; }
@@ -85,7 +76,6 @@
         .cart-total-section { text-align: right; margin-top: 30px; padding-top: 20px; border-top: 2px solid var(--border-color); }
         .total-price { font-size: 26px; font-weight: 700; margin-bottom: 15px; }
 
-        /* Order Success Page */
         .success-box { background-color: var(--card-bg); padding: 60px; text-align: center; border-radius: 12px; border: 1px solid var(--border-color); max-width: 600px; margin: 40px auto; }
         .success-icon { font-size: 56px; color: var(--accent); margin-bottom: 20px; }
         .success-box h2 { font-size: 26px; margin-bottom: 10px; font-weight: 700; }
@@ -94,7 +84,6 @@
 </head>
 <body>
 
-    <!-- Header Navigation -->
     <header>
         <div class="nav-container">
             <div class="logo" onclick="navigateTo('home-page')">LUXORA <span>EDGE</span></div>
@@ -105,26 +94,21 @@
         </div>
     </header>
 
-    <!-- Main Dynamic Content Container -->
     <div class="container">
-        
-        <!-- PAGE 1: HOME (CATALOG) -->
         <section id="home-page" class="page active">
             <div class="hero">
                 <h2>Elite Accessories Sandbox Lab</h2>
-                <p>প্রত্যেকটি ভিন্ন ভিন্ন ইমেজ এবং রিয়েল-টাইম GA4 ডাটা লেয়ার ইঞ্জিন সমৃদ্ধ ৫২টি প্রিমিয়াম ক্রনিকল আইটেম।</p>
+                <p>প্রত্যেকটি ভিন্ন ভিন্ন ফিক্সড ইমেজ এবং রিয়েল-টাইম GA4 ডাটা লেয়ার ইঞ্জিন সমৃদ্ধ ৫২টি প্রিমিয়াম ক্রনিকল আইটেম।</p>
             </div>
             <div class="filter-container" id="filter-bar"></div>
             <div class="grid" id="product-grid"></div>
         </section>
 
-        <!-- PAGE 2: PRODUCT DETAIL -->
         <section id="detail-page" class="page">
             <span class="back-btn" onclick="navigateTo('home-page')">&larr; Return to Studio Collections</span>
             <div class="detail-wrapper" id="detail-content"></div>
         </section>
 
-        <!-- PAGE 3: CART OVERVIEW -->
         <section id="cart-page" class="page">
             <div class="cart-wrapper">
                 <h2 style="margin-bottom: 20px; font-weight: 700;">Your Selected Vault</h2>
@@ -136,7 +120,6 @@
             </div>
         </section>
 
-        <!-- PAGE 4: SUCCESS THANK YOU -->
         <section id="success-page" class="page">
             <div class="success-box">
                 <div class="success-icon">✦</div>
@@ -147,62 +130,106 @@
         </section>
     </div>
 
-    <!-- Analytics Engine & Dynamic Logic Script -->
     <script>
-        // High-End Accessories Categories (4 Main Pillars)
-        const categories = ["Luxury Watches", "Premium Sunglasses", "Fine Jewelry", "Leather Belts & Wallets"];
+        const categories = ["Luxury Watches", "Premium Sunglasses", "Fine Jewelry", "Leather Belts"];
 
-        // Unsplash Specific Unique Image Collections Keywords to assure variations
-        const categoryKeywords = {
-            "Luxury Watches": ["watch", "timepiece", "chronograph", "rolex", "omega"],
-            "Premium Sunglasses": ["sunglasses", "eyewear", "shades", "glasses", "aviators"],
-            "Fine Jewelry": ["jewelry", "ring", "bracelet", "necklace", "diamond"],
-            "Leather Belts & Wallets": ["leather-belt", "wallet", "leather-goods", "purse", "pouch"]
-        };
+        // 52 Unique Permanent High-Quality Unsplash Image IDs
+        const imagePool52 = [
+            // Watches (13)
+            "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500&auto=format&fit=crop&q=60",
+            "https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=500&auto=format&fit=crop&q=60",
+            "https://images.unsplash.com/photo-1542496658-e33a6d0d50f6?w=500&auto=format&fit=crop&q=60",
+            "https://images.unsplash.com/photo-1547996160-81dfa63595aa?w=500&auto=format&fit=crop&q=60",
+            "https://images.unsplash.com/photo-1612817288484-6f916006741a?w=500&auto=format&fit=crop&q=60",
+            "https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?w=500&auto=format&fit=crop&q=60",
+            "https://images.unsplash.com/photo-1539874754764-5a96559165b0?w=500&auto=format&fit=crop&q=60",
+            "https://images.unsplash.com/photo-1619134778706-7015533a6150?w=500&auto=format&fit=crop&q=60",
+            "https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?w=500&auto=format&fit=crop&q=60",
+            "https://images.unsplash.com/photo-1495856458655-09c864f755f0?w=500&auto=format&fit=crop&q=60",
+            "https://images.unsplash.com/photo-1622434641406-a158123450f9?w=500&auto=format&fit=crop&q=60",
+            "https://images.unsplash.com/photo-1509048191080-d2984bad6ae5?w=500&auto=format&fit=crop&q=60",
+            "https://images.unsplash.com/photo-1639006570490-79c0c53f1080?w=500&auto=format&fit=crop&q=60",
+            
+            // Sunglasses (13)
+            "https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=500&auto=format&fit=crop&q=60",
+            "https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=500&auto=format&fit=crop&q=60",
+            "https://images.unsplash.com/photo-1577803645773-f96470509666?w=500&auto=format&fit=crop&q=60",
+            "https://images.unsplash.com/photo-1625591339937-041793e5e55d?w=500&auto=format&fit=crop&q=60",
+            "https://images.unsplash.com/photo-1508296695146-257a814070b4?w=500&auto=format&fit=crop&q=60",
+            "https://images.unsplash.com/photo-1511556532299-8f662fc26c06?w=500&auto=format&fit=crop&q=60",
+            "https://images.unsplash.com/photo-1608248597481-496100c8c836?w=500&auto=format&fit=crop&q=60",
+            "https://images.unsplash.com/photo-1509695507497-903c140c43b0?w=500&auto=format&fit=crop&q=60",
+            "https://images.unsplash.com/photo-1473496169904-658ba7c44d8a?w=500&auto=format&fit=crop&q=60",
+            "https://images.unsplash.com/photo-1563903530908-afdd155d0f86?w=500&auto=format&fit=crop&q=60",
+            "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=500&auto=format&fit=crop&q=60",
+            "https://images.unsplash.com/photo-1502419655532-68b28a1da75e?w=500&auto=format&fit=crop&q=60",
+            "https://images.unsplash.com/photo-1582142306909-195724d33957?w=500&auto=format&fit=crop&q=60",
+
+            // Fine Jewelry (13)
+            "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=500&auto=format&fit=crop&q=60",
+            "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=500&auto=format&fit=crop&q=60",
+            "https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?w=500&auto=format&fit=crop&q=60",
+            "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=500&auto=format&fit=crop&q=60",
+            "https://images.unsplash.com/photo-1602751584552-8ba73aad10e1?w=500&auto=format&fit=crop&q=60",
+            "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=500&auto=format&fit=crop&q=60",
+            "https://images.unsplash.com/photo-1603561591411-07134e71a2a9?w=500&auto=format&fit=crop&q=60",
+            "https://images.unsplash.com/photo-1598560917505-59a3ad559071?w=500&auto=format&fit=crop&q=60",
+            "https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?w=500&auto=format&fit=crop&q=60",
+            "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=500&auto=format&fit=crop&q=60",
+            "https://images.unsplash.com/photo-1573408301185-9146fe634ad0?w=500&auto=format&fit=crop&q=60",
+            "https://images.unsplash.com/photo-1599459182904-18e3af6972cc?w=500&auto=format&fit=crop&q=60",
+            "https://images.unsplash.com/photo-1618403088890-3d9ff6f4c847?w=500&auto=format&fit=crop&q=60",
+
+            // Leather Belts & Wallets (13)
+            "https://images.unsplash.com/photo-1624222247344-550fb8ecf7db?w=500&auto=format&fit=crop&q=60",
+            "https://images.unsplash.com/photo-1601924994987-69e26d50dc26?w=500&auto=format&fit=crop&q=60",
+            "https://images.unsplash.com/photo-1562572159-4ebcd318f4dd?w=500&auto=format&fit=crop&q=60",
+            "https://images.unsplash.com/photo-1614179924047-e1bf49a0a0cf?w=500&auto=format&fit=crop&q=60",
+            "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=500&auto=format&fit=crop&q=60",
+            "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=500&auto=format&fit=crop&q=60",
+            "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=500&auto=format&fit=crop&q=60",
+            "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500&auto=format&fit=crop&q=60",
+            "https://images.unsplash.com/photo-1627123424574-724758594e93?w=500&auto=format&fit=crop&q=60",
+            "https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=500&auto=format&fit=crop&q=60",
+            "https://images.unsplash.com/photo-1532453288457-881ad91599c9?w=500&auto=format&fit=crop&q=60",
+            "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=500&auto=format&fit=crop&q=60",
+            "https://images.unsplash.com/photo-1547949003-9792a18a2601?w=500&auto=format&fit=crop&q=60"
+        ];
 
         const namesTemplate = {
             "Luxury Watches": ["AeroChronograph Gold", "Minimalist Slate Quartz", "Oceanic Diver Automatic", "Titanium Skeleton Edition"],
             "Premium Sunglasses": ["Obsidian Aviator Shield", "Tortoise Shell Wayfarer", "Hexagonal Copper Lens", "Titanium Polarized Edge"],
             "Fine Jewelry": ["Minimalist Chain Link", "Diamond Cut Band", "Silver Cuff Bracelet", "Obsidian Stone Pendant"],
-            "Leather Belts & Wallets": ["Full-Grain Leather Belt", "Slim Carbon Wallet", "Classic Bifold Vault", "Premium Suede Strap"]
+            "Leather Belts": ["Full-Grain Leather Belt", "Slim Carbon Wallet", "Classic Bifold Vault", "Premium Suede Strap"]
         };
 
-        // Generate Exactly 52 Luxury Products with Guaranteed Unique Image URLs
         const products = [];
         for (let i = 1; i <= 52; i++) {
             let cat = categories[(i - 1) % categories.length];
-            let keywords = categoryKeywords[cat];
-            let keyword = keywords[(i - 1) % keywords.length];
             let baseNameList = namesTemplate[cat];
             let baseName = baseNameList[(i - 1) % baseNameList.length];
             
-            // Using precise source page parameters to force Unsplash to load a completely different photo for each iteration
-            let uniqueImageUrl = `https://images.unsplash.com/featured/600x600/?${keyword}&sig=${i * 7}`;
-
             products.push({
                 id: `lux_${300 + i}`,
                 name: `${baseName} (Series ${i})`,
-                price: 45 + ((i * 37) % 1450), // Realistic premium price matrix range: $45 - $1450
+                price: 45 + ((i * 37) % 1450), 
                 category: cat,
-                img: uniqueImageUrl
+                img: imagePool52[i - 1] // Assigns a completely fixed unique image to each item
             });
         }
 
         let cart = [];
         let currentFilter = "All";
 
-        // Global Google Analytics 4 eCommerce Standard Data Layer Engine
         function trackAnalyticsEvent(eventName, eventData) {
             window.dataLayer = window.dataLayer || [];
             window.dataLayer.push({
                 event: eventName,
                 ecommerce: eventData
             });
-            // Output viewable live in Browser Inspect DevTools Console Tab
             console.log(`✦ [DataLayer Push: ${eventName}]`, window.dataLayer[window.dataLayer.length - 1]);
         }
 
-        // Single Page Application Router Simulation
         function navigateTo(pageId) {
             document.querySelectorAll('.page').forEach(page => page.classList.remove('active'));
             document.getElementById(pageId).classList.add('active');
@@ -211,15 +238,12 @@
             trackAnalyticsEvent('page_view', { page_title: pageId, page_location: window.location.href });
         }
 
-        // Initialize Catalog UI
         function initShop() {
-            // Render Category Filter Controls
             const filterBar = document.getElementById('filter-bar');
             filterBar.innerHTML = ["All", ...categories].map(cat => `
                 <button class="filter-btn ${currentFilter === cat ? 'active' : ''}" onclick="applyFilter('${cat}')">${cat}</button>
             `).join('');
 
-            // Render Product Grid based on filter selection
             const grid = document.getElementById('product-grid');
             const filtered = currentFilter === "All" ? products : products.filter(p => p.category === currentFilter);
             
@@ -237,7 +261,6 @@
                 </div>
             `).join('');
 
-            // Fire standard GA4 item list observation trigger
             trackAnalyticsEvent('view_item_list', {
                 item_list_name: currentFilter,
                 items: filtered.slice(0, 10).map((p, index) => ({
@@ -255,7 +278,6 @@
             initShop();
         }
 
-        // SPA Deep View Page Logic
         function viewProductDetails(id) {
             const prod = products.find(p => p.id === id);
             document.getElementById('detail-content').innerHTML = `
@@ -281,7 +303,6 @@
             });
         }
 
-        // Cart State Modifiers
         function addToCart(id) {
             const prod = products.find(p => p.id === id);
             cart.push(prod);
@@ -323,7 +344,7 @@
             trackAnalyticsEvent('view_cart', {
                 value: total,
                 currency: "USD",
-                items: cart.map(i => ({ item_id: i.id, item_name: i.name, item_category: i.category, price: i.price }))
+                items: cart.map(i => ({ item_id: i.id, item_name: i.name, i.category, price: i.price }))
             });
         }
 
@@ -341,7 +362,6 @@
             openCart();
         }
 
-        // Checkout Simulation
         function processCheckout() {
             if (cart.length === 0) return alert("Vault is empty!");
             
@@ -354,16 +374,14 @@
                 currency: "USD",
                 shipping: 0,
                 tax: 0,
-                items: cart.map(i => ({ item_id: i.id, item_name: i.name, item_category: i.category, price: i.price, quantity: 1 }))
+                items: cart.map(i => ({ item_id: i.id, item_name: i.name, i.category, price: i.price, quantity: 1 }))
             });
 
-            // Flush cart data upon confirmation
             cart = [];
             document.getElementById('cart-badge').innerText = "0";
             navigateTo('success-page');
         }
 
-        // Initialize App UI
         window.onload = initShop;
     </script>
 </body>
